@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Appointment Detail</title>
+</head>
+<body>
+    <div  class="row py-5 content-wrapper">
+        <div class="col-12">
+        <h3 class="my-5">Detail</h3>
+        </div>
+        
+                  <h1>{{app_detail.patientName}}</h1>
+                  <div>
+                 <a href="{%url 'appointment:update' app_detail.id %}"><button class=" btn  btn-behance  my-4 p-2 "> update</button></a>
+
+                 <a href="{%url 'appointment:delete' app_detail.id%}"><button class=" btn    my-4 p-2 text-white" style="background-color: red;"> Delete
+                  </button></a>
+                </div>
+              
+                  <div class="col-md-12 grid-margin stretch-card  table-responsive bg-white p-3  shadow"
+                    style="border-radius: 10px;">
+        
+                  
+                    <table class="table  table-striped" style="border:10px;">
+                  
+                        <tbody>
+                          <tr>
+                            <th scope="row"> Appointment Id</th>
+                            <td>{{app_detail.id}}</td>
+                          </tr>
+                         
+                          <tr>
+                            <th scope="row">Patient Name</th>
+                            <td>{{app_detail.patientName}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Doctor Name</th>
+                            <td>{{app_detail.doctorName}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Appointment Date</th>
+                            <td>{{app_detail.appointmentDate}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>{{app_detail.description}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Status</th>
+                            <td>{{app_detail.status}}</td>
+                            
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                  
+                  </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                  <!-- partial -->
+                </div>
+                <!-- page-body-wrapper ends -->
+              </div>
+              
+    
+</body>
+</html> 

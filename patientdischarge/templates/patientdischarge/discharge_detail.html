@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patient Discharge </title>
+</head>
+<body>
+    <div  class="row py-5 content-wrapper">
+        <div class="col-12">
+        <h3 class="my-5">Bill</h3>
+        </div>
+        
+                  <h1>{{pat_detail.patientName}}</h1>
+                  
+                  <div class="col-md-12 grid-margin stretch-card  table-responsive bg-white p-3  shadow"
+                    style="border-radius: 10px;">
+        
+                  
+                    <table class="table  table-striped">
+                  
+                        <tbody>
+                          <tr>
+                            <th scope="row"> Patient Disharge ID</th>
+                            <td>{{pat_detail.id}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Patient  Name </th>
+                            <td>{{pat_detail.patientName}}</td>
+                           
+                          </tr>
+                         
+                          <tr>
+                            <th scope="row">Physician Name</th>
+                            <td>{{pat_detail.attending_physician.first_name}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Service End Date</th>
+                            <td>{{pat_detail.date_service_end}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Room Type</th>
+                            <td>{{pat_detail.room_type}}</td>
+                            
+                          </tr>
+                          
+                          <tr>
+                            <th scope="row">Assigned Doctor Name</th>
+                            <td>{{pat_detail.assignedDoctorName}}</td>
+                            
+                          </tr>
+                          
+                          <tr>
+                            <th scope="row">Admit Date</th>
+                            <td>{{pat_detail.admitDate}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Release Date</th>
+                            <td>{{pat_detail.releaseDate}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Day Spent</th>
+                            <td>{{pat_detail.daySpent}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Room Charge</th>
+                            <td>{{pat_detail.roomCharge}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Medicine Cost </th>
+                            <td>{{pat_detail.medicineCost}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Doctor Fee</th>
+                            <td>{{pat_detail.doctorFee}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Other Charge</th>
+                            <td>{{pat_detail.OtherCharge}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Total Cost</th>
+                            <td>{{pat_detail.total}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button onclick="printFunction()">Print</button>    
+                  
+                  </div>
+                  
+        
+                  <script>
+                    function printFunction() { 
+                      window.print(); 
+                    }
+                  </script>
+        
+        
+        
+        
+        
+        
+        
+        
+                  <!-- partial -->
+                </div>
+                <!-- page-body-wrapper ends -->
+              </div>
+              
+    
+</body>
+</html>

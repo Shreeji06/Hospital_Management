@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <title>index</title>
+</head>
+
+<body>
+
+    <h3>INDEX</h3>
+
+    {% if user.is_authenticated %}
+    <h3>hello {{ user.first_name}}</h3>
+    <h4>You're successfully logged in</h4>
+    <button type="submit">
+        <a href="{% url 'authentication:signout' %}">Sign Out</a>
+    </button>
+
+    {% else %}
+    <button type="submit">
+        <a href="{% url 'authentication:signin' %}">Sign In</a>
+    </button>
+
+    <button type="submit">
+        <a href="{% url 'authentication:signup' %}">Sign Up</a>
+    </button>
+
+    {% endif %}
+
+<div>
+    <a href="{%url 'doctor:create' %}"><button class=" btn  btn-behance  my-4 p-2 "> create doctor</a>
+
+</div>    
+
+</body>
+
+</html>

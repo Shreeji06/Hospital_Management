@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="">
+        
+   
+      </h3>
+
+      <div class="col-12 px-4">
+
+        <div class="table-responsive container bg-white p-3 shadow" style="border-radius: 10px;">
+          <table  class="table table-hover table-bordered" style="width:100%">
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Doctor Name</th>
+                <th>Appointment Date</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+                
+    
+              </tr>
+            </thead>
+            <tbody>
+    
+              {% for appointment in appointments%}
+              <tr>
+                <td> {{appointment.patientName}} </td>
+                <td> {{ appointment.doctorName}}</td>
+                <td> {{ appointment.appointmentDate }}</td>
+                <td> {{ appointment.description}}</td>
+                <td> {{ appointment.status}}</td>
+                <td>
+                  <button style="border: 2px solid chocolate;">
+                    <a href="{%url 'appointment:detail' appointment.id%}">
+                      <i class="mdi mdi-eye"></i> detail
+                    </a>
+                  </button>
+                  <button style="border: none;">
+                    <a href="{%url 'appointment:update' appointment.id%}">
+                      <i class="mdi mdi-border-color"></i> update
+                    </a>
+                  </button>
+                
+                  <button style="border: none;">
+                    <a href="{%url 'appointment:delete' appointment.id %}">
+                      <i class="mdi mdi-delete"></i> delete
+                    </a>
+                  </button>
+                </td>
+              </tr>
+              {%endfor%}
+
+            </tbody>
+          </table>    
+
+        </div>
+      </div>    
+    
+    
+    
+    
+      
+
+
+
+
+</body>
+</html>

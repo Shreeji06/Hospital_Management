@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctor Detail</title>
+</head>
+<body>
+    <div  class="row py-5 content-wrapper">
+        <div class="col-12">
+        <h3 class="my-5">Detail</h3>
+        </div>
+        
+                  <h1>{{doc_detail.first_name}}</h1>
+                  <div>
+                 <a href="{%url 'doctor:update' doc_detail.id %}"><button class=" btn  btn-behance  my-4 p-2 "> update</button></a>
+
+                 <a href="{%url 'doctor:delete' doc_detail.id%}"><button class=" btn    my-4 p-2 text-white" style="background-color: red;"> Delete
+                  </button></a>
+                  <a href="{%url 'doctor:create' %}"><button class=" btn  btn-behance  my-4 p-2 "> create doctor</button></a>
+                </div>
+              
+                  <div class="col-md-12 grid-margin stretch-card  table-responsive bg-white p-3  shadow"
+                    style="border-radius: 10px;">
+        
+                  
+                    <table class="table  table-striped">
+                  
+                        <tbody>
+                          <tr>
+                            <th scope="row"> Doctor Id</th>
+                            <td>{{doc_detail.id}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Name</th>
+                            <td>{{doc_detail.first_name}}</td>
+                           
+                          </tr>
+                          <tr>
+                            <th scope="row">last name</th>
+                            <td>{{doc_detail.last_name}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Profile Pic</th>
+                            <td>{{doc_detail.profile_pic}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Email</th>
+                            <td>{{doc_detail.email}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Address</th>
+                            <td>{{doc_detail.address}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Mobile</th>
+                            <td>{{doc_detail.mobile}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Marital Status</th>
+                            <td>{{doc_detail.marital_status}}</td>
+                            
+                          </tr>
+                          
+                          <tr>
+                            <th scope="row">sex</th>
+                            <td>{{doc_detail.sex}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">department</th>
+                            <td>{{doc_detail.department}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">status</th>
+                            <td>{{doc_detail.status}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                  
+                  </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                  <!-- partial -->
+                </div>
+                <!-- page-body-wrapper ends -->
+              </div>
+              
+    
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="">
+        
+      </h3>
+
+      <div class="col-12 px-4">
+
+        <div class="table-responsive container bg-white p-3 shadow" style="border-radius: 10px;">
+          <table  class="table table-hover table-bordered" style="width:100%">
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Physician Name</th>
+                <th>End date  of service </th>
+                <th>Room Type</th>
+                <th>Assigned Doctor Name</th>
+                <th>Admit date</th>
+                <th>Release Date</th>
+                <th>Total Days</th>
+                <th>Room Charge</th>
+                <th>Medicine Charge</th>
+                <th>Doctor Charge</th>
+                <th>Other Charge</th>
+                <th>Total</th>
+                <th>Paid</th>
+                <th>Action</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+    
+              {% for patient in patients %}
+                
+              <tr>
+                <td> {{ patient.patientName }}</td>
+                <td> {{ patient.attending_physician.first_name}}</td>
+                <td> {{ patient.date_service_end}} </td>
+                <td> {{ patient.room_type}}</td>
+                <td> {{ patient.assignedDoctorName}}</td>
+
+                <td> {{ patient.admitDate }}</td>
+                <td> {{ patient.releaseDate }}</td>
+                <td> {{ patient.daySpent }}</td>
+                <td> {{ patient.roomCharge}}</td>
+                <td> {{ patient.medicineCost}}</td>
+                <td> {{ patient.doctorFee}}</td>
+                <td> {{ patient.OtherCharge}}</td>
+                <td> {{ patient.total}}</td>
+                <td> {{ patient.paid }}</td>
+                <td>
+                  {% if patient.paid == 1  %}
+
+                  <button style="border: 2px solid chocolate;">
+                    <a href="{%url 'discharge:detail' patient.id%}">
+                      <i class="mdi mdi-eye"></i> Bill
+                    </a>
+                  </button>
+                  {% endif%}
+                  <button style="border: none;">
+                    <a href="{%url 'discharge:update' patient.id%}">
+                      <i class="mdi mdi-border-color"></i> update
+                    </a>
+                  </button>
+                
+                  <button style="border: none;">
+                    <a href="{%url 'discharge:delete' patient.id %}">
+                      <i class="mdi mdi-delete"></i> delete
+                    </a>
+                  </button></td>
+              
+                
+              </tr>
+              
+              {%endfor%}
+
+            </tbody>
+          </table>    
+
+        </div>
+      </div>    
+    
+    
+    
+    
+      
+
+
+
+
+</body>
+</html>

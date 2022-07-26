@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patient Detail</title>
+</head>
+<body>
+    <div  class="row py-5 content-wrapper">
+        <div class="col-12">
+        <h3 class="my-5">Detail</h3>
+        </div>
+        
+                  <h1>{{pat_detail.first_name}}</h1>
+                  <div>
+                 <a href="{%url 'patient:update' pat_detail.id %}"><button class=" btn  btn-behance  my-4 p-2 "> update</button></a>
+
+                 <a href="{%url 'patient:delete' pat_detail.id%}"><button class=" btn    my-4 p-2 text-white" style="background-color: red;"> Delete
+                  </button></a>
+                  <a href="{%url 'patient:create' %}"><button class=" btn  btn-behance  my-4 p-2 "> Add Patient</button></a>
+                </div>
+              
+                  <div class="col-md-12 grid-margin stretch-card  table-responsive bg-white p-3  shadow"
+                    style="border-radius: 10px;">
+        
+                  
+                    <table class="table  table-striped">
+                  
+                        <tbody>
+                          <tr>
+                            <th scope="row">Patient Id</th>
+                            <td>{{pat_detail.id}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Name</th>
+                            <td>{{pat_detail.first_name}}</td>
+                           
+                          </tr>
+                          <tr>
+                            <th scope="row">last name</th>
+                            <td>{{pat_detail.last_name}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Date Of Birth</th>
+                            <td>{{pat_detail.date_of_Birth}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Email</th>
+                            <td>{{pat_detail.email}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Mobile</th>
+                            <td>{{pat_detail.mobile}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Profile Pic</th>
+                            <td>{{pat_detail.profile_pic}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Address</th>
+                            <td>{{pat_detail.address}}</td>
+                            
+                          </tr>
+                          
+                          <tr>
+                            <th scope="row">Marital Status</th>
+                            <td>{{pat_detail.marital_status}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Emergency Contact</th>
+                            <td>{{pat_detail.emergency_contact}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Relationship</th>
+                            <td>{{pat_detail.relationship}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Weight</th>
+                            <td>{{pat_detail.weight}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Height</th>
+                            <td>{{pat_detail.height}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Reason</th>
+                            <td>{{pat_detail.other_medications_reason}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Symptons</th>
+                            <td>{{pat_detail.symptoms}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Assigned Doctor Id</th>
+                            <td>{{pat_detail.assignedDoctorId_id}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">Admit date</th>
+                            <td>{{pat_detail.admitDate}}</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">status</th>
+                            <td>{{pat_detail.status}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                  
+                  </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                  <!-- partial -->
+                </div>
+                <!-- page-body-wrapper ends -->
+              </div>
+              
+    
+</body>
+</html>

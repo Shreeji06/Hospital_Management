@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patient Update</title>
+</head>
+<body>
+   
+          <h2>Create Patient</h2>
+              <p class="mt-2">update Patient Detail</p>
+          
+            <hr>
+            <form method="post">
+              {%csrf_token %}
+              <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">First name</label>
+                  <input type="text" class="form-control" name="fname" value="{{pat.first_name}}" required>
+      
+                </div>
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Last Name</label>
+                  <input type="text" class="form-control" name="lname" value="{{pat.last_name}}" required>
+      
+                </div>
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Date of Birth</label>
+                  <input type="date" class="form-control add" name="dob" value="{{pat.date_of_Birth}}" required>
+                  <p class="demo"></p>
+      
+                </div>
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Email</label>
+                  <input type="email" class="form-control" name="email"  value="{{pat.email}}" required>
+      
+                </div>
+              </div>
+      
+              <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Mobile</label>
+                  <input type="number" class="form-control" name="mobile" value="{{pat.mobile}}" required>
+      
+                </div>
+                <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Sex</label>
+                    <select class="form-control" name="sex"  value="{{pat.sex}}" required>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Profile pic</label>
+                  <input type="file" class="form-control" name="pic" value="{{pat.profile_pic}}" required>
+      
+                  
+                </div>
+      
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Address</label>
+                  <input type="text" class="form-control" name="add" value="{{pat.address}}" required>
+                 
+                 
+                </div>
+                
+              </div>
+      
+              <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Marital status</label>
+                  <select class="form-control" name="m_status"  value="{{pat.marital_status}}" required>
+                    <option>Single</option>
+                    <option>Married</option>
+                  </select>
+         
+                  
+                </div>
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Emergency Contact</label>
+                  <input type="number" class="form-control bg-light" name="e_contact" value="{{pat.emergency_contact}}" required>
+      
+                </div>
+
+                <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Relationship</label>
+                    <input type="text" class="form-control bg-light" name="relation" value="{{pat.relationship}}" required>
+        
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Weight</label>
+                  <input type="text" class="form-control bg-light" name="weight" value="{{pat.weight}}" required>
+                </div>
+
+                
+                <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Height</label>
+                    <input type="text" class="form-control bg-light" name="height" value="{{pat.height}}" required>
+        
+                  </div>
+
+                  
+                  
+                  <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Other Medicine Reason</label>
+                    <input type="text" class="form-control bg-light" name="reason" value="{{pat.other_medications_reason}}" >
+        
+                  </div>
+             
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Symptons</label>
+                  <input type="text" class="form-control bg-light" name="symptoms" value="{{pat.symptoms}}" required>
+                </div>
+
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Assigned Doctor Id</label>
+                  <select name="d_id" >
+                    {% for doc in docs %}
+                    
+                      <option value="{{doc.id}}">{{doc.id}}</option>
+
+                    {%endfor%}
+                  </select>
+                </div>
+
+
+                
+                <div class="col-lg-3">
+    
+                    <label class="my-2 fw-bold">Status</label>
+                    <input type="checkbox" class="form-control bg-light" name="status"  value="{{pat.status}}">
+                    </div> 
+         
+            <div class="col-lg-3">
+              <button type="submit" class="btn btn-secondary  ms-3 my-3" style="border-radius: 10px;"
+                ></a>Save</button>
+            </div>
+          
+        </div>
+                
+            </form>
+          </div>
+      
+      
+       
+</body>
+</html>

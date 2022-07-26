@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="">
+        <a href="{%url 'doctor:create'%}"><button style="margin-left: 20px;"
+            class="btn  btn-gradient-success fs-5   my-4 "> + Add
+            Doctor</button></a>
+   
+      </h3>
+
+      <div class="col-12 px-4">
+
+        <div class="table-responsive container bg-white p-3 shadow" style="border-radius: 10px;">
+          <table  class="table table-hover table-bordered" style="width:100%">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Profile Pic</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Mobile Number</th>
+                <th>Marital Status</th>
+                <th>Sex</th>
+                <th>Department</th>
+                <th>Status</th>
+                <td>Action</td>
+    
+              </tr>
+            </thead>
+            <tbody>
+    
+              {% for doc in docs%}
+              <tr>
+                <td> {{ doc.first_name }}</a></td>
+                <td> {{ doc.last_name }}</td>
+                <td> {{doc.profile_pic}} </td>
+                <td> {{ doc.email}}</td>
+                <td> {{ doc.address }}</td>
+                <td> {{ doc.mobile}}</td>
+                <td> {{ doc.marital_status}}</td>
+                <td> {{ doc.sex }}</td>
+                <td> {{ doc.department }}</td>
+                <td> {{ doc.status }}</td>
+                <td>
+                  <button style="border: 2px solid chocolate;">
+                    <a href="{%url 'doctor:detail' doc.id%}">
+                      <i class="mdi mdi-eye"></i> detail
+                    </a>
+                  </button>
+                  <button style="border: none;">
+                    <a href="{%url 'doctor:update' doc.id%}">
+                      <i class="mdi mdi-border-color"></i> update
+                    </a>
+                  </button>
+                
+                  <button style="border: none;">
+                    <a href="{%url 'doctor:delete' doc.id %}">
+                      <i class="mdi mdi-delete"></i> delete
+                    </a>
+                  </button>
+                </td>
+              </tr>
+              {%endfor%}
+
+            </tbody>
+          </table>    
+
+        </div>
+      </div>    
+    
+    
+    
+    
+      
+
+
+
+
+</body>
+</html>

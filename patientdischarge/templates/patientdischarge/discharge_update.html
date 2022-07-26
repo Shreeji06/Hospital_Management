@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patient Discharge Create</title>
+</head>
+<body>
+   
+          <h2>Create Patient Discharge detail</h2>
+              <p class="mt-2">Fill Patient Discharge Detail</p>
+          
+            <hr>
+            <form method="post">
+              {%csrf_token %}
+              <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Patient Name</label>
+                  <input type="text" class="form-control" name="p_name" required value="{{pat.patientName}}">
+
+                </div>
+               
+               
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Physician Name</label>
+                  <select name="ap">
+                    {%for doc in doctor%}
+                    {%if doc.department == 'Physiotherapists'%}
+                    <option value="{{doc.id}}">{{doc.first_name}}</option>
+                    {%endif%}
+                    {%endfor%}
+                  </select>
+                  
+                </div>
+                <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold"> Service End Date</label>
+                    <input type="date" class="form-control" name="e_date" required vaue="{{pat.date_service_end}}">
+        
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Room Type</label>
+                 <select name="room">
+                    <option>Genaral</option>
+                    <option>VIP</option>
+                    <option>ICU</option>
+                 </select>
+      
+                </div>
+              </div>
+      
+              <div class="row">
+              
+                </div>
+                <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Assigned Doctor Name</label>
+                    <input type="text" class="form-control" name="ad_name" required value="{{pat.assignedDoctorName}}">
+
+                </div>
+                
+               
+                
+                <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Room Charge</label>
+                    <input type="number" class="form-control bg-light" name="r_charge" required value="{{pat.roomCharge}}">
+        
+                  </div>
+
+                  <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold"> Medicine Cost </label>
+                    <input type="number" class="form-control bg-light" name="m_cost" required value="{{pat.medicineCost}}">
+        
+                  </div> 
+                  
+                  <div class="col-lg-3">
+      
+                    <label class="my-2 fw-bold">Doctor Fee</label>
+                    <input type="number" class="form-control bg-light" name="d_cost" required value="{{pat.doctorFee}}">
+        
+                  </div>
+             
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3">
+      
+                  <label class="my-2 fw-bold">Other Charge</label>
+                  <input type="number" class="form-control bg-light" name="o_cost" required value="{{pat.OtherCharge}}">
+                </div>
+
+
+               
+
+                
+            <div class="col-lg-3">
+              <button type="submit" class="btn btn-secondary  ms-3 my-3" style="border-radius: 10px;"
+                ></a>Save</button>
+            </div>
+          
+        </div>
+                
+            </form>
+          </div>
+      
+      
+       
+</body>
+</html>
